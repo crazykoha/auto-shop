@@ -58,7 +58,7 @@ $(document).ready(function(){
         } else {
             $.ajax({
                 type: 'GET',
-                url: '/site/index',
+                url: '/',
                 dataType: 'text',
                 data: {'brandIds': newBrandIds, 'autoModelIds': newAutoModelIds, 'engineTypeIds': engineTypeIds, 'driveUnitIds': driveUnitIds},
                 success: function (result) {
