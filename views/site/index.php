@@ -14,7 +14,7 @@ use yii\helpers\Html;
 /* @var $dataProvider ActiveDataProvider */
 /* @var $searchModel CarSearch */
 
-$this->title = 'Auto shop';
+$this->title = "Продажа автомобилей".($searchModel->currentBrand?(' '.$searchModel->currentBrand->name):'').($searchModel->currentModel?' '.$searchModel->currentModel->name:'')." в Санкт-Петербурге";
 ?>
 <div class="d-flex">
     <div class="filter__left">
@@ -61,7 +61,7 @@ $this->title = 'Auto shop';
         <?=Html::button("Отфильтровать", ['id'=>'filter'])?>
     </div>
     <div class="site-index products-container">
-        <h1>Продажа автомобилей<?=$searchModel->currentBrand?' '.$searchModel->currentBrand->name:''?><?=$searchModel->currentModel?' '.$searchModel->currentModel->name:''?> в Санкт-Петербурге</h1>
+        <h1><?=$this->title?></h1>
         <div class="products">
             <?=$this->render('catalog', ['dataProvider'=>$dataProvider, 'searchModel'=>$searchModel])?>
         </div>
